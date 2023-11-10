@@ -35,4 +35,5 @@ def has_digits_in_middle(str):
     return False
 
 
-main()
+if __name__ == "__main__":
+    main()
