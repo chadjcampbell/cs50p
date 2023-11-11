@@ -1,6 +1,10 @@
 import pytest
 from fuel import convert, gauge
 
+def test_convert_works():
+    assert convert('1/4') == 25
+    assert convert('2/4') == 50
+    assert convert('3/4') == 75
 
 def test_x_int():
     with pytest.raises(ValueError):
@@ -18,17 +22,6 @@ def test_out_of_bounds():
         convert('-4/3')
         convert('4/-3')
         convert('1.5/3')
-
-
-def test_int_errors():
-    with pytest.raises(ValueError):
-        convert('4/3')
-        convert('-4/3')
-        convert('4/-3')
-        convert('1.5/3')
-        convert('a/4')
-        convert('3/a')
-        convert('a/a')
 
 
 def test_div_by_zero():
